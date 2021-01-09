@@ -1,8 +1,9 @@
+import { FormEvent, ChangeEvent } from 'react';
 import './index.css';
 
 type propsTypes = {
-  handleSubmit: () => void;
-  handleChange: () => void;
+  handleSubmit: (e: FormEvent) => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   signIn: boolean;
 };
 
@@ -25,6 +26,7 @@ const Form = ({ handleSubmit, handleChange, signIn }: propsTypes) => {
           <input className='form__text' type='text' onChange={handleChange} />
         </>
       )}
+      <button>Go!</button>
     </form>
   );
 };

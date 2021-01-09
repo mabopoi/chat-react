@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+}
+
+.main__chart {
+  border: 1px solid grey;
+  width: 320px;
+  margin-top: 20px;
+}
+
+.main__list {
+  height: 10%;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.main__listItem {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__listItem:hover {
+  background-color: aqua;
+}

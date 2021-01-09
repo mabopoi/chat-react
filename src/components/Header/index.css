@@ -1,10 +1,12 @@
 .header__container {
-  text-align: center;
+  display: flex;
   justify-content: center;
-  border-bottom: 1px grey;
-  height: 30vh;
+  align-items: center;
+  background-color: #d2cac9;
+  border-bottom: 10px solid #c0b8b7;
+  height: 20vh;
 }
 
 .header__title {
-  font-size: 16px;
+  font-size: 32px;
 }
