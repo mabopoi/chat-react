@@ -1,7 +1,42 @@
+.form {
+  text-align: left;
+  display: grid;
+}
+
 .form__input {
   height: 20px;
+  margin: 10px;
 }
 
 .form__text {
   font-size: 16px;
+  margin-left: 10px;
+}
+
+.form__btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form__btn {
+  border-radius: 5px;
+  border: none;
+  background-color: lightgray;
+  color: black;
+  height: 25px;
+  width: 100px;
+  box-shadow: 0 4px grey;
+  outline: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.form__btn:hover {
+  background-color: burlywood;
+}
+
+.form__btn:active {
+  outline: none;
+  box-shadow: 0 2px grey;
+  transform: translateY(4px);
 }

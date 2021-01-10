@@ -6,7 +6,7 @@
 
 .main__chart {
   border: 1px solid grey;
-  width: 320px;
+  width: 550px;
   margin-top: 20px;
 }
 
@@ -25,8 +25,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .main__listItem:hover {
   background-color: aqua;
+}
+
+.main__chartContent {
+  display: flex;
+  height: 90%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main__chartTitle {
+  font-size: 32px;
 }
