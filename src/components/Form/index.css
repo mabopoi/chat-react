@@ -21,7 +21,7 @@
 .form__btn {
   border-radius: 5px;
   border: none;
-  background-color: lightgray;
+  background-color: #9adb92;
   color: black;
   height: 25px;
   width: 100px;
@@ -32,7 +32,7 @@
 }
 
 .form__btn:hover {
-  background-color: burlywood;
+  background-color: #7fb379;
 }
 
 .form__btn:active {

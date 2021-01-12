@@ -1,12 +1,26 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import Form from '../Form';
 import './index.css';
 
 const Main = () => {
+  const [data, setData] = useState({});
   const [signUp, setSignUp] = useState(true);
-  const handleChange = () => {};
-  const handleSignUpSubmit = () => {};
-  const handleLogInSubmit = () => {};
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    const newData: object = {
+      ...data,
+      [name]: value,
+    };
+    setData(newData);
+  };
+
+  const handleSignUpSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
+  const handleLogInSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
 
   return (
     <main className='main'>
