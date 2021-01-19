@@ -1,10 +1,15 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import Form from '../Form';
+import Axios from 'axios';
 import './index.css';
 
 const Main = () => {
   const [data, setData] = useState({});
   const [signUp, setSignUp] = useState(true);
+  const [userCreated, setUserCreated] = useState(false);
+  const [error, setError] = useState('');
+  const history = useHistory();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -15,21 +20,52 @@ const Main = () => {
     setData(newData);
   };
 
-  const handleSignUpSubmit = (e: FormEvent) => {
+  const handleSignUpSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    const signUp = await Axios.post('http://localhost:3001/auth/sign-up', data);
+
+    if (signUp.status === 201) {
+      setUserCreated(true);
+    } else {
+      setError('There was a problem, user not created');
+    }
   };
-  const handleLogInSubmit = (e: FormEvent) => {
+
+  const handleLogInSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    try {
+      const logIn = await Axios.post(
+        'http://localhost:3001/auth/sign-in',
+        data
+      );
+      if (logIn.status === 200) {
+        history.replace('/chat');
+      }
+    } catch {
+      setError("Email and password don't match");
+    }
   };
 
   return (
     <main className='main'>
       <div className='main__chart'>
         <ul className='main__list'>
-          <div className='main__listItem' onClick={() => setSignUp(true)}>
+          <div
+            className='main__listItem'
+            onClick={() => {
+              setSignUp(true);
+              setError('');
+            }}
+          >
             <li>Sign up</li>
           </div>
-          <div className='main__listItem' onClick={() => setSignUp(false)}>
+          <div
+            className='main__listItem'
+            onClick={() => {
+              setSignUp(false);
+              setError('');
+            }}
+          >
             <li>Log in</li>
           </div>
         </ul>
@@ -40,6 +76,8 @@ const Main = () => {
               handleSubmit={handleSignUpSubmit}
               handleChange={handleChange}
               signUp={true}
+              userCreated={userCreated}
+              error={error}
             />
           </div>
         ) : (
@@ -49,6 +87,8 @@ const Main = () => {
               handleSubmit={handleLogInSubmit}
               handleChange={handleChange}
               signUp={false}
+              userCreated={false}
+              error={error}
             />
           </div>
         )}

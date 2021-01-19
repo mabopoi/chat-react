@@ -40,3 +40,15 @@
   box-shadow: 0 2px grey;
   transform: translateY(4px);
 }
+
+.form__error {
+  background-color: lightcoral;
+  margin: 16px 0px 8px 0px;
+  padding: 8px;
+}
+
+.form__userCreated {
+  background-color: greenyellow;
+  margin: 16px 0px 8px 0px;
+  padding: 8px;
+}

@@ -47,3 +47,17 @@
 .main__chartTitle {
   font-size: 32px;
 }
+
+@media screen and (max-width: 576px) {
+  .main {
+    height: 75vh;
+  }
+  .main__chart {
+    width: 75vw;
+    height: 95%;
+  }
+
+  .main__chartContent {
+    display: grid;
+  }
+}

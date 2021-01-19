@@ -5,9 +5,17 @@ type propsTypes = {
   handleSubmit: (e: FormEvent) => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   signUp: boolean;
+  error: string;
+  userCreated: boolean;
 };
 
-const Form = ({ handleSubmit, handleChange, signUp }: propsTypes) => {
+const Form = ({
+  handleSubmit,
+  handleChange,
+  signUp,
+  error,
+  userCreated,
+}: propsTypes) => {
   return (
     <form className='form' onSubmit={handleSubmit}>
       <span className='form__text'>Email</span>
@@ -51,6 +59,18 @@ const Form = ({ handleSubmit, handleChange, signUp }: propsTypes) => {
           Go!
         </button>
       </div>
+      {error && (
+        <div className='form__error'>
+          <span className='form__errorMsg'>{error}</span>
+        </div>
+      )}
+      {userCreated && (
+        <div className='form__userCreated'>
+          <span className='form__userCreatedMsg'>
+            User created successfully, go to Log In
+          </span>
+        </div>
+      )}
     </form>
   );
 };
