@@ -61,14 +61,12 @@ const Form = ({
       </div>
       {error && (
         <div className='form__error'>
-          <span className='form__errorMsg'>{error}</span>
+          <span>{error}</span>
         </div>
       )}
       {userCreated && (
         <div className='form__userCreated'>
-          <span className='form__userCreatedMsg'>
-            User created successfully, go to Log In
-          </span>
+          <span>User created successfully, go to Log In</span>
         </div>
       )}
     </form>
