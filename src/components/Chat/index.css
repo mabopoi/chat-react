@@ -1,0 +1,35 @@
+.chat {
+  border: 1px solid black; /* Debug purpose */
+  width: 50vw;
+  height: 400px;
+}
+
+.chat__container--right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px;
+}
+
+.chat__container--left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+}
+
+.chat__msgContainer {
+  background-color: aliceblue;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.chat__msgContainer--mine {
+  background-color: aquamarine;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+span {
+  display: block;
+}

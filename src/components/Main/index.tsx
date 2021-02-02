@@ -1,7 +1,9 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Form from '../Form';
 import Axios from 'axios';
+import userContext from '../../contexts/User';
+import { contextType } from '../../types';
 import './index.css';
 
 const Main = () => {
@@ -10,6 +12,7 @@ const Main = () => {
   const [userCreated, setUserCreated] = useState(false);
   const [error, setError] = useState('');
   const history = useHistory();
+  const { addUser } = useContext(userContext) as contextType;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -33,12 +36,10 @@ const Main = () => {
 
   const handleLogInSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    const logIn = await Axios.post('http://localhost:3001/auth/sign-in', data);
     try {
-      const logIn = await Axios.post(
-        'http://localhost:3001/auth/sign-in',
-        data
-      );
       if (logIn.status === 200) {
+        addUser(logIn.data.user);
         history.replace('/chat');
       }
     } catch {
