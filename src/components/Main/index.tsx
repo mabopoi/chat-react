@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Form from '../Form';
 import Axios from 'axios';
 import userContext from '../../contexts/User';
-import { contextType } from '../../types';
+import { ContextType } from '../../types';
 import './index.css';
 
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
   const [userCreated, setUserCreated] = useState(false);
   const [error, setError] = useState('');
   const history = useHistory();
-  const { addUser } = useContext(userContext) as contextType;
+  const { addUser } = useContext(userContext) as ContextType;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

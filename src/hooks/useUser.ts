@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { User, contextType } from '../types';
+import { User, ContextType } from '../types';
 
-export const useUser = (): contextType => {
+export const useUser = (): ContextType => {
   const [user, setUser] = useState<User>({ name: '', email: '' });
   const addUser = (userToAdd: User) => setUser(userToAdd);
 

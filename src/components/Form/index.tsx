@@ -1,13 +1,5 @@
-import { FormEvent, ChangeEvent } from 'react';
+import { FormProps } from '../../types';
 import './index.css';
-
-type propsTypes = {
-  handleSubmit: (e: FormEvent) => void;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  signUp: boolean;
-  error: string;
-  userCreated: boolean;
-};
 
 const Form = ({
   handleSubmit,
@@ -15,7 +7,7 @@ const Form = ({
   signUp,
   error,
   userCreated,
-}: propsTypes) => {
+}: FormProps) => {
   return (
     <form className='form' onSubmit={handleSubmit}>
       <span className='form__text'>Email</span>

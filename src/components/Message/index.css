@@ -1,0 +1,36 @@
+.message__section--right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px;
+}
+
+.message__section--left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+}
+
+.message__msgContainer {
+  background-color: aliceblue;
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 24px;
+}
+
+.message__msgContainer--mine {
+  background-color: aquamarine;
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 24px;
+}
+
+.message__userName {
+  display: block;
+  font-weight: bold;
+}
+
+.message__content {
+  display: block;
+}
