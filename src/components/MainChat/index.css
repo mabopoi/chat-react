@@ -1,0 +1,12 @@
+.mainChat {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 576px) {
+  .mainChat {
+    display: block;
+  }
+}

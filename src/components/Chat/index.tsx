@@ -21,10 +21,13 @@ const Chat = () => {
 
   return (
     <section className='chat'>
-      {chatMessages.map((msg) => (
-        <Message key={chatMessages.indexOf(msg)} user={user} msg={msg} />
-      ))}
+      <div className='chat__container'>
+        {chatMessages.map((msg) => (
+          <Message key={chatMessages.indexOf(msg)} user={user} msg={msg} />
+        ))}
+      </div>
       <input
+        className='chat__input'
         type='text'
         value={msgToSend}
         onChange={(e) => setMsgToSend(e.target.value)}

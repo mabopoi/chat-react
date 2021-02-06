@@ -1,11 +1,10 @@
 import Footer from '../components/Footer';
-import Chat from '../components/Chat';
+import MainChat from '../components/MainChat';
 
 const ChatPage = () => {
   return (
     <>
-      <h1>This is the chat</h1>
-      <Chat />
+      <MainChat />
       <Footer />
     </>
   );
