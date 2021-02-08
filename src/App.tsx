@@ -1,18 +1,22 @@
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import Home from './containers/Home';
 import ChatPage from './containers/ChatPage';
 import { UserProvider } from './contexts/User';
 import { useUser } from './hooks/useUser';
 
 const App = () => {
-  const user = useUser();
+  const userHook = useUser();
+  const { user } = userHook;
 
   return (
     <BrowserRouter>
-      <UserProvider value={user}>
+      <UserProvider value={userHook}>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/chat' component={ChatPage} />
+          <Route path='/chat'>
+            {user.email ? <ChatPage /> : <Redirect to='/' />}
+          </Route>
+          {/* <Redirect to='/' /> */}
         </Switch>
       </UserProvider>
     </BrowserRouter>
