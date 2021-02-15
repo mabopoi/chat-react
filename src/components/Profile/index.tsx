@@ -10,7 +10,7 @@ const Profile = () => {
 
   const handleLogOut = () => {
     addUser({ name: '', email: '' });
-    history.push('/');
+    history?.push('/');
   };
 
   return (

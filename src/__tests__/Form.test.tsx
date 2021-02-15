@@ -3,7 +3,7 @@ import { render, screen, fireEvent, Nullish } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Form from '../components/Form';
 
-describe('Form tests', () => {
+describe('<Form /> tests', () => {
   beforeAll(() => {
     render(
       <Form
