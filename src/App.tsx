@@ -16,7 +16,7 @@ const App = () => {
           <Route path='/chat'>
             {user.email ? <ChatPage /> : <Redirect to='/' />}
           </Route>
-          {/* <Redirect to='/' /> */}
+          <Redirect to='/' />
         </Switch>
       </UserProvider>
     </BrowserRouter>
